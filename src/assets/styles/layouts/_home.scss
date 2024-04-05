@@ -15,10 +15,10 @@ body {
 
 h1, h2, h3 {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-montserrat;
 }
 
-h1 {
+.site-title {
   display: flex;
   justify-content: center;
   font-size: 45px;
@@ -67,9 +67,8 @@ h1 {
           width: auto;
         }
 
-        h1 {
+        h2 {
           margin-bottom: 40px;
-          font-family: 'Montserrat', sans-serif;
           font-size: 1.5rem;
           text-transform: uppercase;
 
@@ -94,7 +93,7 @@ h1 {
           }
 
           &:hover {
-            background-color: invert($uoc-corporate, 15%);
+            background-color: invert($uoc-corporate, 50%);
           }
         }
       }
@@ -126,7 +125,7 @@ h1 {
           border-radius: 50%;
 
           &:hover {
-            background-color: invert($uoc-masterbrand, 15%);
+            background-color: invert($uoc-masterbrand, 50%);
           }
         }
       }
@@ -171,6 +170,91 @@ h1 {
       margin-left: 15px;
     }
   }
+}
+
+.contact-group {
+  
+  margin-top: 40px;
+
+  @include media-query($breakpoint-md) {
+    display: flex;
+  }
+
+  .contact-info {
+    flex: 1;
+    padding: 50px;
+    color: #fff;
+    background-color: $uoc-corporate;
+  }
+
+  .contact-form {
+    flex: 2;
+    padding: 50px;
+    background-color: $uoc-masterbrand;
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;    
+    }
+
+    &__input {
+      display: block;
+      width: 100%;
+      height: 30px;
+      padding: 5px 20px;
+      font-size: 15px;
+      color:#8a8a8a;
+      letter-spacing: .8px;
+      background-color: #fff;
+      border:1px solid #dedede;
+      border-radius: 10px;
+    }
+
+    &__select {
+      
+
+      width: 100%;
+      height: 30px;
+      padding: 5px 20px;
+      font-size: 15px;
+      color: #fff;
+      text-align: left;
+      cursor: pointer;
+      background-color: $uoc-corporate;
+      border: none;
+      border-radius: 10px;
+
+
+      &:hover, &:focus {
+        background-color: invert($uoc-corporate, 50%);
+      }
+    }
+
+    &__textarea {
+      font-family: $font-family-sans-serif;
+      font-size: 15px;
+      border: none;
+      border-radius: 10px;
+    }
+    
+    &__submit {
+      width: 100%;
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      background-color: $uoc-corporate;
+      border: none;
+      border-radius: 10px;
+
+      &:hover, &:focus {
+        background-color: invert($uoc-corporate, 50%);
+      }
+    }
+
+  }
+
 }
 
 .uoc-footer {
