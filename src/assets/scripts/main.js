@@ -14,14 +14,3 @@
   const university = "UOC";
   console.log(`Hello, ${university}!`);
 } )();
-
-$(document).ready(function(){
-  $(".owl-carousel").owlCarousel();
-});
-
-$(document).ready(function(){
-  console.log("aaa");
-  $(document).ready(function(){
-    $(".owl-carousel").owlCarousel();
-  });
-});
