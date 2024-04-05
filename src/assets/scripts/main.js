@@ -16,6 +16,7 @@
 } )();
 
 $(document).ready(function(){
+  console.log("aaa");
   $('.owl-carousel').owlCarousel({
     items : 1,
     loop  : true,
