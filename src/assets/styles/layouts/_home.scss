@@ -3,50 +3,173 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   height: 100vh;
+  padding: 0;
   margin: 0;
-  padding: 2rem;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  background-color: $uoc-bg;
   color: $uoc-corporate;
+  background-color: $uoc-bg;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  line-height: 60px;
   text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-transform: uppercase;
 }
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+.header {
+  position: relative;
 
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+
+    img {
+      width: $header-logo-width;
+      height: auto;
+    }
+  }
+
+  .owl-carousel {
+    .owl-item {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 85vh;
+        object-fit: cover;
+      }
+
+      .owl-item__overlay {
+        @include ellipsis;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        padding: 25px;
+        text-align: center;
+        background-color: $overlay-bg-color;
+        transform: translate(-50%, -50%);
+        
+        @include media-query($breakpoint-md) {
+          width: auto;
+        }
+
+        h1 {
+          margin-bottom: 40px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+
+          @include media-query($breakpoint-md) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+          }
+        }
+
+        .btn-to {
+          padding: 10px 20px;
+          font-family: 'Lato', sans-serif;
+          font-size: 1rem;
+          color: #fff;
+          text-decoration: none;
+          text-transform: uppercase;
+          background-color: $uoc-corporate;
+          border-radius: 30px;
+
+          @include media-query($breakpoint-md) {
+            font-size: 1rem;
+          }
+
+          &:hover {
+            background-color: invert($uoc-corporate, 15%);
+          }
+        }
+      }
+    }
+
+    .owl-nav {
+      display: none;
+
+      @include media-query($breakpoint-md) {
+        display: block;
+
+        .owl-prev {
+          position: absolute;
+          top: 50%;
+          left: 1%;
+          transform: translate(-1%, -50%);
+        }
+
+        .owl-next {
+          position: absolute;
+          top: 50%;
+          right: 1%;
+          transform: translate(1%, -50%);
+        }
+
+        .owl-prev, .owl-next {
+          padding: 15px 23px !important;
+          background-color: $uoc-masterbrand;
+          border-radius: 50%;
+
+          &:hover {
+            background-color: invert($uoc-masterbrand, 15%);
+          }
+        }
+      }
+    }
+
+    .owl-dots {
+      display: none;
+    }
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+.main {
+  margin-top: 50px;
+}
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+.container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.patrimoni {
+  margin-top: 50px;
+  
+  &__image {
+    max-width: 100%;
+
+    @include media-query($breakpoint-md) {
+      width: 500px;
+      margin-bottom: 15px;
+    }
+  }
+
+  @include media-query($breakpoint-md) {
+    &:nth-child(odd) .patrimoni__image {
+      float: left;
+      margin-right: 15px;
+    }
+
+    &:nth-child(even) .patrimoni__image {
+      float: right;
+      margin-left: 15px;
+    }
   }
 }
 

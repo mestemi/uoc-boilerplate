@@ -1,0 +1,17 @@
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin reset-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin media-query($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
